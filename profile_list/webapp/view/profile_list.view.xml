@@ -1,0 +1,68 @@
+<!-- 패키지가 소문자, 클래스가 대문자 -->
+
+<mvc:View
+    controllerName="root.controller.profile_list"
+
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:t="sap.ui.table"
+    xmlns:ext="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <!-- Namespace  -->
+
+    <VBox class="sapUiSmallMargin">
+        <!-- VBox는 한국어로 나옴 -->
+        <HBox>
+            <Select id="page_search">
+                <core:Item key="" text="페이지를 선택해주세요." />
+                <core:Item key="1" text="Page: 1"/>
+                <core:Item key="2" text="Page: 2"/>
+            </Select>
+        <Button id="button_search" text="조회" press=".search_profile"/>
+
+        </HBox>
+
+        <!-- 모바일 -->
+        <Table items="{/list}">
+            <columns>
+                <Column><Text text="아이디" /></Column>
+                <Column><Text text="이름1"  /></Column>
+                <Column><Text text="이름2"  /></Column>
+                <Column><Text text="이메일" /></Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{id}"/>
+                        <Text text="{first_name}"/>
+                        <Text text="{last_name}"/>
+                        <Text text="{email}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+  </VBox>
+
+        <!-- ui5 화면 -->
+        <t:Table rows="{/list}">
+            <t:columns>
+                <t:Column>
+                    <Label text="아이디" />
+                    <t:template> <Text text="{id}" /> </t:template>
+                </t:Column>
+                <t:Column>
+                    <Label text="이름1" />
+                    <t:template> <Text text="{first_name}" /> </t:template>
+                </t:Column>
+                <t:Column>
+                    <Label text="이름2" />
+                    <t:template> <Text text="{last_name}" /> </t:template>
+                </t:Column>
+                <t:Column>
+                    <Label text="이메일" />
+                    <t:template> <Text text="{email}" /> </t:template>
+                </t:Column>
+            </t:columns>
+        </t:Table>
+</mvc:View>
