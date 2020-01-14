@@ -1,0 +1,91 @@
+<mvc:View
+    controllerName="root.controller.Calculation"
+
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:exc="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+   <VBox class="sapUiSmallMargin">
+    <f:Form id="p_form" editable="true" >
+
+    <f:layout>
+        <f:ResponsiveGridLayout
+            emptySpanXL="4"
+            emptySpanL="4"
+            emptySpanM="4"
+            emptySpanS="0"
+            columnsXL="2"
+            columnsL="2"
+            columnsM="2"
+            singleContainerFullSize="false" />
+    </f:layout>
+
+    <f:title>
+        <core:Title text="내가 만든 계산기~ ºㅅº" />
+    </f:title>
+
+    <f:formContainers> 
+        <f:FormContainer>
+            <f:formElements> 
+                <f:FormElement>
+                    <f:fields>
+                        <Input editable="false" type="Text" id="display" value="" textAlign="Right" />
+                    </f:fields>
+                </f:FormElement>
+
+                <f:FormElement>
+                    <f:fields>
+                        <Input editable="false" type="Text" id="result" value="" textAlign="Right" />
+                    </f:fields>
+                </f:FormElement>
+
+                <f:FormElement>
+                    <f:fields>
+                        <Button text="AC" press=".reset" /> 
+                        <Button text="/" press=".en_input" /> 
+                    </f:fields>
+                </f:FormElement>
+
+                <f:FormElement>
+                    <f:fields>
+                        <Button text="7" press=".en_input" />
+                        <Button text="8" press=".en_input" />
+                        <Button text="9" press=".en_input" />
+                        <Button text="*" press=".en_input" />
+                    </f:fields>
+                </f:FormElement>
+
+                <f:FormElement>
+                    <f:fields>
+                        <Button text="4" press=".en_input" />
+                        <Button text="5" press=".en_input" />
+                        <Button text="6" press=".en_input" />
+                        <Button text="-" press=".en_input" />
+                    </f:fields>
+                </f:FormElement>
+
+                <f:FormElement>
+                    <f:fields>
+                        <Button text="1" press=".en_input" />
+                        <Button text="2" press=".en_input" />
+                        <Button text="3" press=".en_input" />
+                        <Button text="+" press=".en_input" />
+                    </f:fields>
+                </f:FormElement>
+
+                <f:FormElement>
+                    <f:fields>
+                        <Button text="0" press=".en_input" />
+                        <Button text="." press=".en_input" />
+                        <Button text="=" press=".view_result" />
+                    </f:fields>
+                </f:FormElement>
+            </f:formElements>
+        </f:FormContainer>
+    </f:formContainers>
+    </f:Form>
+</VBox>
+
+</mvc:View>
